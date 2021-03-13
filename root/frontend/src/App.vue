@@ -1,8 +1,16 @@
 <template>
-  <div id="app">
-<!-- todo add nav here -->
-    <router-view />
-  </div>
+  <v-app>
+    <v-navigation-drawer id="nav" app>
+      <h1>Navigation</h1>
+    </v-navigation-drawer>
+
+    <v-container fluid>
+      <v-main>
+        <router-view></router-view>
+      </v-main>
+    </v-container>
+
+  </v-app>
 </template>
 
 <style>
@@ -16,6 +24,7 @@
 
 #nav {
   padding: 30px;
+  background-color: blue;
 }
 
 #nav a {

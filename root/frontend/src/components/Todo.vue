@@ -1,10 +1,10 @@
 <template>
-<div id = "todo">
-  <input type="checkbox" id="checkbox">
-  <h3>{{todo.title}}</h3>
-  <p>{{todo.project}}</p>
-  <p>10:00am</p>
-</div>
+  <div id="todo">
+    <input type="checkbox" id="checkbox" />
+    <h3>{{ todo.title }}</h3>
+    <p>{{ todo.project }}</p>
+    <p>10:00am</p>
+  </div>
 </template>
 
 <script>
@@ -15,7 +15,6 @@ export default {
 </script>
 
 <style scoped>
-
 #todo {
   white-space: nowrap;
 }
