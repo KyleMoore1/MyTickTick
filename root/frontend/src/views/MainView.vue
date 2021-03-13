@@ -9,7 +9,7 @@
 import TodoList from "@/components/TodoList";
 
 export default {
-  name: "Home",
+  name: "MainView",
   components: {
     TodoList
   }
