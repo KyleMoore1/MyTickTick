@@ -18,6 +18,7 @@ export default {
     return {
       todos: [
         {
+          id: 0,
           title: "title",
           due_date: "2020-03-20",
           priority: 0,
@@ -26,6 +27,7 @@ export default {
           isComplete: false
         },
         {
+          id: 1,
           title: "title",
           due_date: "2020-03-20",
           priority: 0,
@@ -34,6 +36,7 @@ export default {
           isComplete: false
         },
         {
+          id: 2,
           title: "title",
           due_date: "2020-03-20",
           priority: 0,

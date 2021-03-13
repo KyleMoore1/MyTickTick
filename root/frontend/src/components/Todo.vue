@@ -1,5 +1,5 @@
 <template>
-  <div id="todo">
+  <div id="todo" v-on:click="updateActiveTodo">
     <input type="checkbox" id="checkbox" />
     <h3>{{ todo.title }}</h3>
     <p>{{ todo.project }}</p>
@@ -10,7 +10,12 @@
 <script>
 export default {
   name: "Todo",
-  props: ["todo"]
+  props: ["todo"],
+  methods: {
+    updateActiveTodo() {
+      this.$router.push('/' + this.todo.id)
+    }
+  }
 };
 </script>
 

@@ -9,7 +9,6 @@
         <router-view></router-view>
       </v-main>
     </v-container>
-
   </v-app>
 </template>
 
@@ -24,7 +23,7 @@
 
 #nav {
   padding: 30px;
-  background-color: blue;
+  background-color: saddlebrown;
 }
 
 #nav a {

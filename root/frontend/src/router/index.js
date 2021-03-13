@@ -1,14 +1,14 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
-import MainView from "../views/MainView.vue";
+import TodoListParent from "@/views/TodoListParent";
 
 Vue.use(VueRouter);
 
 const routes = [
   {
     path: "/:id",
-    name: "MainView",
-    component: MainView
+    name: "TodoListParent",
+    component:TodoListParent
   }
 ];
 
