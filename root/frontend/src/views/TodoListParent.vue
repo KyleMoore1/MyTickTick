@@ -1,5 +1,5 @@
 <template>
-  <v-row>
+  <v-row style="height:100%">
     <v-col id= "list">
       <TodoList/>
     </v-col>
@@ -27,11 +27,9 @@ export default {
 <style scoped>
 
 #list {
-  background-color: grey;
   border-right: 1px solid rgba(0,0,0,.07);
 }
 
 #active {
-  background-color: beige;
 }
 </style>
