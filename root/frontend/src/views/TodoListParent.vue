@@ -1,17 +1,14 @@
 <template>
-  <div class="home">
-    <v-container fluid>
-      <v-row>
-        <v-col id = "list">
-          <TodoList/>
-        </v-col>
-        <v-col id = "active">
-          <ActiveTodo/>
-        </v-col>
-      </v-row>
-    </v-container>
-
-  </div>
+  <v-container fluid>
+    <v-row>
+      <v-col id = "list">
+        <TodoList/>
+      </v-col>
+      <v-col id = "active">
+        <ActiveTodo/>
+      </v-col>
+    </v-row>
+  </v-container>
 </template>
 
 <script>
@@ -33,6 +30,7 @@ export default {
 
 #list {
   background-color: grey;
+  border-right: 1px solid rgba(0,0,0,.07);
 }
 
 #active {

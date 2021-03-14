@@ -1,5 +1,8 @@
 <template>
-  <h1>{{activeTodo.id}}</h1>
+  <div>
+    <h1>{{activeTodo.title}}</h1>
+    <p>{{activeTodo.description}}</p>
+  </div>
 </template>
 
 <script>

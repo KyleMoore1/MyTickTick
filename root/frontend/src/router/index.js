@@ -6,9 +6,9 @@ Vue.use(VueRouter);
 
 const routes = [
   {
-    path: "/:id",
+    path: "/",
     name: "TodoListParent",
-    component:TodoListParent
+    component: TodoListParent
   }
 ];
 
