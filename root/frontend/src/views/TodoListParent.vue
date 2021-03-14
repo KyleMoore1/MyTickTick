@@ -1,14 +1,12 @@
 <template>
-  <v-container fluid>
-    <v-row>
-      <v-col id = "list">
-        <TodoList/>
-      </v-col>
-      <v-col id = "active">
-        <ActiveTodo/>
-      </v-col>
-    </v-row>
-  </v-container>
+  <v-row>
+    <v-col id= "list">
+      <TodoList/>
+    </v-col>
+    <v-col id= "active">
+      <ActiveTodo />
+    </v-col>
+  </v-row>
 </template>
 
 <script>

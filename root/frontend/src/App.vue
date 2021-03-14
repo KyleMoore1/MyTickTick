@@ -4,11 +4,11 @@
       <h1>Navigation</h1>
     </v-navigation-drawer>
 
-    <v-container fluid>
-      <v-main>
+    <v-main>
+      <v-container fluid>
         <router-view></router-view>
-      </v-main>
-    </v-container>
+      </v-container>
+    </v-main>
   </v-app>
 </template>
 
