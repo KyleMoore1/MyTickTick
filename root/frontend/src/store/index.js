@@ -4,8 +4,18 @@ import Vuex from "vuex";
 Vue.use(Vuex);
 
 export default new Vuex.Store({
-  state: {},
-  mutations: {},
+  state: {
+    activeTodo: null,
+    todos: []
+  },
+  mutations: {
+    setCurrentTodo(state, payload) {
+      state.activeTodo = payload;
+    }
+  },
   actions: {},
-  modules: {}
+  modules: {},
+  getters: {
+    getActiveTodo: state => state.activeTodo
+  }
 });

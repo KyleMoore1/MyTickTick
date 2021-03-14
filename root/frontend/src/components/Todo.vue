@@ -13,7 +13,7 @@ export default {
   props: ["todo"],
   methods: {
     updateActiveTodo() {
-      this.$router.push('/' + this.todo.id)
+      this.$store.commit("setCurrentTodo", this.todo);
     }
   }
 };

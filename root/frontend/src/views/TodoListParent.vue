@@ -6,8 +6,7 @@
           <TodoList/>
         </v-col>
         <v-col id = "active">
-          <h1>active thing</h1>
-          <h2>{{$route.params.id}}</h2>
+          <ActiveTodo/>
         </v-col>
       </v-row>
     </v-container>
@@ -18,10 +17,12 @@
 <script>
 // @ is an alias to /src
 import TodoList from "@/components/TodoList";
+import ActiveTodo from "@/components/ActiveTodo";
 
 export default {
   name: "MainView",
   components: {
+    ActiveTodo,
     TodoList
   }
 };
