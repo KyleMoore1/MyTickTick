@@ -22,6 +22,11 @@ export default {
   methods: {
     ifIsActiveTodo(id) {
       const activeTodo = this.$store.getters.getActiveTodo
+
+      if (activeTodo == null) {
+        return false
+      }
+      
       return activeTodo.id == id
     }
   }
