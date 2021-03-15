@@ -1,12 +1,12 @@
 <template>
   <div id="todo" v-on:click="updateActiveTodo">
-    <div style="float: left">
+    <div>
       <input type="checkbox" id="checkbox"/>
       <h3 id = "title">{{ todo.title }}</h3>
     </div>
-    <div style="float: right">
-      <p>{{ todo.project }}</p>
-      <p>10:00am</p>
+    <div>
+      <p id="project">{{ todo.project }}</p>
+      <p id="date">10:00am</p>
     </div>
   </div>
 </template>
@@ -28,6 +28,9 @@ export default {
   white-space: nowrap;
   height: 40px;
   border-bottom: 1px solid rgba(0,0,0,.07);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 #todo * {
@@ -41,5 +44,9 @@ export default {
 #title {
   font-weight: 400 !important;
   font-size: 16px !important;
+}
+
+#date {
+  margin-left: 5px;
 }
 </style>
