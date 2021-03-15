@@ -5,7 +5,7 @@ Vue.use(Vuex);
 
 export default new Vuex.Store({
   state: {
-    activeTodo: null,
+    activeTodo: { id: 0 },
     todos: [
       {
         id: 0,

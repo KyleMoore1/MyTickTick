@@ -31,6 +31,8 @@ export default {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding-left: 24px;
+  padding-right: 12px;
 }
 
 #todo * {
@@ -48,5 +50,11 @@ export default {
 
 #date {
   margin-left: 5px;
+  color: #4b6fde;
+}
+
+#project {
+  color: rgba(0,0,0,.36);
+  font-size: 12px;
 }
 </style>

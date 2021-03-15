@@ -2,7 +2,7 @@
   <div>
     <h1>Todos</h1>
     <ul id="todos">
-      <li v-for="todo in todos" :key="todo.title">
+      <li v-for="todo in todos" :key="todo.id" :class="{activeTodo: ifIsActiveTodo(todo.id)}">
         <Todo v-bind:todo="todo" />
       </li>
     </ul>
@@ -18,6 +18,12 @@ export default {
     todos() {
       return this.$store.getters.getTodos
     }
+  },
+  methods: {
+    ifIsActiveTodo(id) {
+      const activeTodo = this.$store.getters.getActiveTodo
+      return activeTodo.id == id
+    }
   }
 };
 </script>
@@ -25,5 +31,18 @@ export default {
 <style scoped>
 ul {
   list-style-type: none;
+  padding-left: 0px;
+}
+
+li {
+  transition: background-color 0.1s linear;
+}
+
+li:hover {
+  background-color: rgba(75,111,222,0.08);
+}
+
+.activeTodo {
+ background-color: rgba(75,111,222,0.12);
 }
 </style>
