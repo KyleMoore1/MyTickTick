@@ -2,7 +2,7 @@
   <div>
     <h1>Todos</h1>
     <ul id="todos">
-      <li v-for="todo in todos" :key="todo.title">
+      <li v-for="todo in todos" :key="todo.id" :class="{activeTodo: ifIsActiveTodo(todo.id)}">
         <Todo v-bind:todo="todo" />
       </li>
     </ul>
@@ -14,35 +14,21 @@ import Todo from "@/components/Todo";
 export default {
   name: "TodoList",
   components: { Todo },
-  data() {
-    return {
-      todos: [
-        {
-          title: "title",
-          due_date: "2020-03-20",
-          priority: 0,
-          description: "description",
-          project: "project",
-          isComplete: false
-        },
-        {
-          title: "title",
-          due_date: "2020-03-20",
-          priority: 0,
-          project: "project",
-          description: "description",
-          isComplete: false
-        },
-        {
-          title: "title",
-          due_date: "2020-03-20",
-          priority: 0,
-          project: "project",
-          description: "description",
-          isComplete: false
-        }
-      ]
-    };
+  computed: {
+    todos() {
+      return this.$store.getters.getTodos
+    }
+  },
+  methods: {
+    ifIsActiveTodo(id) {
+      const activeTodo = this.$store.getters.getActiveTodo
+
+      if (activeTodo == null) {
+        return false
+      }
+      
+      return activeTodo.id == id
+    }
   }
 };
 </script>
@@ -50,5 +36,18 @@ export default {
 <style scoped>
 ul {
   list-style-type: none;
+  padding-left: 0px;
+}
+
+li {
+  transition: background-color 0.1s linear;
+}
+
+li:hover {
+  background-color: rgba(75,111,222,0.08);
+}
+
+.activeTodo {
+ background-color: rgba(75,111,222,0.12);
 }
 </style>

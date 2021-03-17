@@ -4,18 +4,21 @@
       <h1>Navigation</h1>
     </v-navigation-drawer>
 
-    <v-container fluid>
-      <v-main>
+    <v-main>
+      <v-container fluid style="height: 100%">
         <router-view></router-view>
-      </v-main>
-    </v-container>
-
+      </v-container>
+    </v-main>
   </v-app>
 </template>
 
 <style>
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
+  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  font-style: normal;
+  line-height: 1.5;
+  font-weight: 400;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
@@ -24,7 +27,8 @@
 
 #nav {
   padding: 30px;
-  background-color: blue;
+  background-color: rgba(44,66,118,.06);
+  border-right: 1px solid rgba(0,0,0,.07);
 }
 
 #nav a {
