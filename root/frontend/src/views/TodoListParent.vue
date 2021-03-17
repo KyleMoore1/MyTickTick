@@ -1,6 +1,8 @@
 <template>
   <v-row style="height:100%">
     <v-col id= "list">
+      <h1>Todos</h1>
+      <NewTodoInput/>
       <TodoList/>
     </v-col>
     <v-col id= "active">
@@ -13,10 +15,12 @@
 // @ is an alias to /src
 import TodoList from "@/components/TodoList";
 import ActiveTodo from "@/components/ActiveTodo";
+import NewTodoInput from "@/components/NewTodoInput";
 
 export default {
   name: "MainView",
   components: {
+    NewTodoInput,
     ActiveTodo,
     TodoList
   }

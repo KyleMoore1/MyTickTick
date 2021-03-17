@@ -1,6 +1,5 @@
 <template>
   <div>
-    <h1>Todos</h1>
     <ul id="todos">
       <li v-for="todo in todos" :key="todo.id" :class="{activeTodo: ifIsActiveTodo(todo.id)}">
         <Todo v-bind:todo="todo" />
@@ -26,8 +25,7 @@ export default {
       if (activeTodo == null) {
         return false
       }
-      
-      return activeTodo.id == id
+      return activeTodo.id === id
     }
   }
 };
