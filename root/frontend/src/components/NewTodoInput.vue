@@ -1,15 +1,28 @@
 <template>
   <div id = "container">
     <div id = "todo-input">
-      <input type="text" placeholder="Add Task to Inbox. Press Enter to save.">
+      <input v-model="inputText" type="text" v-on:keyup.enter="addTodo" placeholder="Add Task to Inbox. Press Enter to save.">
     </div>
   </div>
 </template>
 
 <script>
+import Todo from "@/data/Todo";
+
 export default {
-name: "NewTodoInput"
+  name: "NewTodoInput",
+  data: () => ({
+    inputText: ""
+  }),
+  methods: {
+    addTodo() {
+      const todo = new Todo("3", this.inputText, "5:00am", "0", "project")
+      this.$store.commit("addTodo", todo)
+      this.inputText = ""
+    }
+  }
 }
+
 </script>
 
 <style scoped>

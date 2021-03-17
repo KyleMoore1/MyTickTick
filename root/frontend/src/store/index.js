@@ -39,6 +39,9 @@ export default new Vuex.Store({
   mutations: {
     setCurrentTodo(state, payload) {
       state.activeTodo = payload;
+    },
+    addTodo(state, payload) {
+      state.todos.push(payload);
     }
   },
   actions: {},
