@@ -12,11 +12,14 @@ import Todo from "@/data/Todo";
 export default {
   name: "NewTodoInput",
   data: () => ({
-    inputText: ""
+    inputText: "",
+    date: "0000-00-00",
+    project: "project",
+    priority: "0"
   }),
   methods: {
     addTodo() {
-      const todo = new Todo("3", this.inputText, "5:00am", "0", "project")
+      const todo = new Todo("3", this.inputText, this.date, this.priority, this.project)
       this.$store.commit("addTodo", todo)
       this.inputText = ""
     }
