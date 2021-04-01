@@ -1,15 +1,15 @@
 <template>
   <div id = "container">
-    <ActiveTodoDescription/>
+    <ActiveTodoTitle/>
     <p>{{activeTodo.description}}</p>
   </div>
 </template>
 
 <script>
-import ActiveTodoDescription from "@/components/ActiveTodoTitle";
+import ActiveTodoTitle from "@/components/ActiveTodoTitle";
 export default {
   name: "ActiveTodo",
-  components: {ActiveTodoDescription},
+  components: {ActiveTodoTitle},
   computed: {
     activeTodo() {
       return this.$store.getters.getActiveTodo
