@@ -8,8 +8,17 @@ class TodoRepository {
   }
 
   async saveTodo(todo) {
-    const newTodo = await todo.save();
-    return newTodo;
+    const savedTodo = await todo.save();
+    return savedTodo;
+  }
+
+  async updateTodo(id, newTodo) {
+    const updatedTodo = await Todo.findByIdAndUpdate(
+      id,
+      { $set: newTodo },
+      { new: true }
+    );
+    return updatedTodo;
   }
 }
 

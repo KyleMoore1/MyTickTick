@@ -29,24 +29,9 @@ router.post("/", async (req, res) => {
 // one
 router.put("/:id", async (req, res) => {
   const id = req.params.id;
-  const body = req.body;
+  const newTodo = req.body;
 
-  const todo = {
-    title: body.title,
-    due_date: body.due_date,
-    priority: body.priority,
-    description: body.description,
-    project: body.project,
-    isComplete: body.isComplete
-  };
-
-  const updatedTodo = await Todo.findByIdAndUpdate(
-    id,
-    {
-      $set: todo
-    },
-    { new: true }
-  );
+  const updatedTodo = await todoService.updateTodo(id, newTodo);
   res.json(updatedTodo);
 });
 

@@ -9,8 +9,13 @@ class TodoService {
   }
 
   async saveTodo(todo) {
-    const newTodo = await this.todoRepository.saveTodo(todo);
-    return newTodo;
+    const savedTodo = await this.todoRepository.saveTodo(todo);
+    return savedTodo;
+  }
+
+  async updateTodo(id, newTodo) {
+    const updatedTodo = await this.todoRepository.updateTodo(id, newTodo);
+    return updatedTodo;
   }
 }
 
