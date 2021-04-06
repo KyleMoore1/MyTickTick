@@ -1,11 +1,14 @@
 const express = require("express");
 const router = express.Router();
 const Todo = require("../models/todo");
+const TodoService = require("../services/TodoService");
+
+const todoService = new TodoService();
 
 //getting all
 router.get("/", async (req, res) => {
   try {
-    const allTodos = await Todo.find();
+    const allTodos = await todoService.getAllTodos();
     res.json(allTodos);
   } catch (err) {
     res.status(500).json({ message: err.message });
