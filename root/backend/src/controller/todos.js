@@ -5,7 +5,7 @@ const TodoService = require("../services/TodoService");
 
 const todoService = new TodoService();
 
-//getting all
+// Get all todos
 router.get("/", async (req, res) => {
   try {
     const allTodos = await todoService.getAllTodos();
@@ -15,27 +15,18 @@ router.get("/", async (req, res) => {
   }
 });
 
-//adding one
+// Save to-do
 router.post("/", async (req, res) => {
-  const body = req.body;
-  const todo = new Todo({
-    title: body.title,
-    due_date: body.due_date,
-    priority: body.priority,
-    description: body.description,
-    project: body.project,
-    isComplete: body.isComplete
-  });
-
+  const todo = new Todo(req.body);
   try {
-    const newTodo = await todo.save();
-    res.json(newTodo);
+    const savedTodo = await todoService.saveTodo(todo);
+    res.json(savedTodo);
   } catch (err) {
     res.status(500).json({ message: err.message });
   }
 });
 
-//updating one
+// one
 router.put("/:id", async (req, res) => {
   const id = req.params.id;
   const body = req.body;
