@@ -3,7 +3,7 @@
     <h1 @click="toggleEditTitle">{{activeTodo.title}}</h1>
   </div>
   <div v-else>
-    <input type="text" @blur="updateTodoAndToggleEdit"  v-model="activeTodo.title" v-focus>
+    <input type="text" @blur="updateTodoAndToggleEdit" v-model="activeTodo.title" v-focus>
   </div>
 </template>
 
@@ -23,7 +23,7 @@ export default {
       this.editTitle = !this.editTitle
     },
     updateTodoAndToggleEdit() {
-      //todo push to backend
+      this.$store.dispatch("updateTodo", this.activeTodo)
       this.toggleEditTitle()
     }
   },

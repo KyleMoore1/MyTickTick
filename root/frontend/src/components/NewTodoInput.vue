@@ -16,7 +16,7 @@ export default {
       due_date: "2021-03-05T00:00:00.000+00:00",
       project: "project",
       priority: "0",
-      description: ""
+      description: "Write a description here"
     }
   }),
   methods: {

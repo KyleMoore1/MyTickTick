@@ -31,6 +31,11 @@ export default new Vuex.Store({
       axios
         .post("http://localhost:5000/todos/", todo)
         .then(resp => state.commit("addTodo", resp.data));
+    },
+    updateTodo(state, todo) {
+      const id = todo._id;
+      delete todo._id;
+      axios.put("http://localhost:5000/todos/" + id, todo);
     }
   },
   modules: {},
