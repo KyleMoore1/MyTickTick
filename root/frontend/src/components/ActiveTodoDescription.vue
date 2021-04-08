@@ -23,7 +23,7 @@ export default {
       this.editDesc = !this.editDesc
     },
     updateTodoAndToggleEditDesc() {
-      //todo push to backend
+      this.$store.dispatch("updateTodo", this.activeTodo)
       this.toggleEditDesc()
     }
   },
