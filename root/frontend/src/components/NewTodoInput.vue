@@ -1,27 +1,29 @@
 <template>
   <div id = "container">
     <div id = "todo-input">
-      <input v-model="inputText" type="text" v-on:keyup.enter="addTodo" placeholder="Add Task to Inbox. Press Enter to save.">
+      <input v-model="todo.title" type="text" v-on:keyup.enter="addTodo" placeholder="Add Task to Inbox. Press Enter to save.">
     </div>
   </div>
 </template>
 
 <script>
-import Todo from "@/data/Todo";
 
 export default {
   name: "NewTodoInput",
   data: () => ({
-    inputText: "",
-    date: "0000-00-00",
-    project: "project",
-    priority: "0"
+    todo: {
+      title: "",
+      due_date: "2021-03-05T00:00:00.000+00:00",
+      project: "project",
+      priority: "0",
+      description: ""
+    }
   }),
   methods: {
     addTodo() {
-      const todo = new Todo("3", this.inputText, this.date, this.priority, this.project)
-      this.$store.commit("addTodo", todo)
-      this.inputText = ""
+      this.$store.dispatch("addTodo", this.todo).then(
+          () => {this.todo.title = ""}
+      )
     }
   }
 }

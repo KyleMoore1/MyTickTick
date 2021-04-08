@@ -26,6 +26,11 @@ export default new Vuex.Store({
       axios
         .get("http://localhost:5000/todos/")
         .then(resp => state.commit("setTodos", resp.data));
+    },
+    addTodo(state, todo) {
+      axios
+        .post("http://localhost:5000/todos/", todo)
+        .then(resp => state.commit("addTodo", resp.data));
     }
   },
   modules: {},
