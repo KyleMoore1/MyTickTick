@@ -12,6 +12,14 @@
   </v-app>
 </template>
 
+<script>
+export default {
+  mounted() {
+    this.$store.dispatch("getTodos")
+  }
+}
+</script>
+
 <style>
 #app {
   font-family: Helvetica Neue, Helvetica, Arial, sans-serif;

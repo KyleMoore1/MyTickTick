@@ -1,7 +1,7 @@
 <template>
   <div>
     <ul id="todos">
-      <li v-for="todo in todos" :key="todo.id" :class="{activeTodo: ifIsActiveTodo(todo.id)}">
+      <li v-for="todo in todos" :key="todo.id" :class="{activeTodo: ifIsActiveTodo(todo._id)}">
         <Todo v-bind:todo="todo" />
       </li>
     </ul>
@@ -25,9 +25,9 @@ export default {
       if (activeTodo == null) {
         return false
       }
-      return activeTodo.id === id
+      return activeTodo._id === id
     }
-  }
+  },
 };
 </script>
 
